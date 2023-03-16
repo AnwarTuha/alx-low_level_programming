@@ -3,6 +3,8 @@
 /**
  *  main - Entry, prints quote with puts
  *
+ *  Return - succes denoted with 0
+ *
  */
 int main(void)
 {

@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- *  main - Entry point, prints numbers 0-9
+ *  main - Entry point, prints numbers of base-16
  *
  *  Return: success denoted by 1
  *

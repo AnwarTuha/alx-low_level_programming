@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- *  main - Entry point, prints numbers 0-9
+ *  main - Entry point, prints alphabets in reverse
  *
  *  Return: success denoted by 1
  *

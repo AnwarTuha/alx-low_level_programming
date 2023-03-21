@@ -3,12 +3,12 @@
 #include <stdio.h>
 
 /**
- * print_last_digit - prints last digit of input
+ * add - function that adds two numbers
  *
  * @n: the integer value it receives
  * @m: the integer value it receives
  *
- * Return: integer, last digit of input
+ * Return: integer, sum of two numbers
  */
 int add(int n, int m)
 {

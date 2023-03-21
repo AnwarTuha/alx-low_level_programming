@@ -43,7 +43,9 @@ void print_times_table(int n)
 			if (j != n)
 			{
 				putchar(',');
-				putchar('\t');
+				putchar(' ');
+				putchar(' ');
+				putchar(' ');
 			}
 		}
 		putchar('\n');

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * _abs - prints last digit of input
+ * print_last_digit - prints last digit of input
  *
  * @n: the integer value it receives
  *
@@ -10,5 +10,5 @@
  */
 int print_last_digit(int n)
 {
-	return (_abs(n) % 10);
+	return (abs(n) % 10);
 }

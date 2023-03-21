@@ -8,9 +8,9 @@
  */
 int main(void)
 {
-	unsigned long int a = 1;
-	unsigned long int b = 2;
-	unsigned long int sum = 0;
+	long int a = 1;
+	long int b = 2;
+	long int sum = 0;
 
 	while (a <= 4000000)
 	{
@@ -18,7 +18,7 @@ int main(void)
 		{
 			sum += a;
 		}
-		unsigned long int next = a + b;
+		long int next = a + b;
 
 		a = b;
 		b = next;

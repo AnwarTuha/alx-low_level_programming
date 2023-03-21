@@ -5,7 +5,7 @@
 /**
  * print_to_98 - function that prints n - 98
  *
- * @n - starting num of function
+ * @n: starting num of function
  */
 void print_to_98(int n)
 {

@@ -3,10 +3,11 @@
 #include <ctype.h>
 
 /**
- *  _islower - checks whether char is lowercase
+ * _islower - checks is a character is lowercase
  *
- *  Return: 1 for true 0 for false
+ * @c: the integer value it receives
  *
+ * Return: 1 if true. 0 if false.
  */
 int _islower(int c)
 {

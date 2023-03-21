@@ -9,7 +9,7 @@
  */
 void print_times_table(int n)
 {
-	int i;
+	int i, j;
 
 	if (n > 15 || n < 0)
 	{
@@ -17,14 +17,35 @@ void print_times_table(int n)
 	}
 	for (i = 0; i <= n; i++)
 	{
-		for (int j = 0; j <= n; j++)
+		for (j = 0; j <= n; j++)
 		{
-			printf("%d", i * j);
+			int num = i * j;
+
+			if (num == 0)
+			{
+				putchar('0');
+			}
+			else
+			{
+				int reversed_num = 0;
+
+				while (num != 0)
+				{
+					reversed_num = reversed_num * 10 + num % 10;
+					num /= 10;
+				}
+				while (reversed_num != 0)
+				{
+					putchar(reversed_num % 10 + '0');
+					reversed_num /= 10;
+				}
+			}
 			if (j != n)
 			{
-				printf(", ");
+				putchar(',');
+				putchar(' ');
 			}
 		}
-		printf("\n");
+		putchar('\n');
 	}
 }

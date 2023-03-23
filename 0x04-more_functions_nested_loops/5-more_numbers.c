@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
-* more_numbers - prints number 0 to 9 except 2 & 4
+* more_numbers - prints 10 times the numbers, from 0 to 14
 *
 * Return: void
 */

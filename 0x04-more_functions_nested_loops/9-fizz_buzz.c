@@ -21,18 +21,18 @@ int main(void)
 		}
 		else if (i % 5 == 0)
 		{
-			printf("%s ", "Buzz");
-		}
-		else
-		{
 			if (i == 100)
 			{
-				printf("%d", i);
+				printf("%s", "Buzz");
 			}
 			else
 			{
-				printf("%d ", i);
+				printf("%s ", "Buzz");
 			}
+		}
+		else
+		{
+			printf("%d ", i);
 		}
 	}
 

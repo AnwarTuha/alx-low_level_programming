@@ -11,19 +11,17 @@
 int main(void)
 {
 	int i;
-	char password[9];
-	int checksum = 2772;
+    char password[9];
 
-	srand(time(NULL));
-
+    srand(time(0));
+    
 	for (i = 0; i < 8; i++)
 	{
-		password[i] = rand() % 128;
-		checksum -= password[i];
+        password[i] = rand() % 94 + 33;
 	}
-
-	password[8] = checksum;
-
+    
+	password[8] = '\0';
+    
 	printf("%s\n", password);
 
 	return (0);

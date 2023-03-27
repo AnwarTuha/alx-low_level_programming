@@ -5,7 +5,7 @@
 /**
 * reset_to_98 - resets value of *n to 98
 *
-* @*n: integer that indicates number of '-'
+* @n: integer that indicates number of '-'
 *
 * Return: void
 */

@@ -14,23 +14,17 @@ void print_rev(char *s)
 {
 	int i;
 	int length;
-	int left;
-	int right;
 
-	char temp;
+	length = 0;
 
-	length = strlen(s);
-	left = 0;
-	right = length - 1;
+    while (s[length] != '\0')
+    {
+        length++;
+    }
 
-	for (i = left; i < right; i++)
-	{
-		temp = s[i];
-		s[i] = s[right];
-		s[right] = temp;
-
-		right--;
-	}
-
-	printf("%s", s);
+    for (i = length - 1; i >= 0; i--)
+    {
+        putchar(s[i]);
+    }
+    putchar('\n');
 }

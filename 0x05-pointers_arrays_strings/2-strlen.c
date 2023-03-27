@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
-* swap_int - swaps the values of two integers
+* _strlen - swaps the values of two integers
 *
 * @s: pointer to string to be counted
 *

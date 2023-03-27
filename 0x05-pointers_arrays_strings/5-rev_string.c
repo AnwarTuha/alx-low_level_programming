@@ -19,6 +19,7 @@ void rev_string(char *s)
 	char temp;
 
 	length = strlen(s);
+	right = length - 1;
 
 	while (left < right)
 	{

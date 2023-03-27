@@ -10,19 +10,19 @@
 
 int main(void)
 {
-	int i;
-    char password[9];
+	int sum;
+	char c;
 
-    srand(time(0));
-    
-	for (i = 0; i < 8; i++)
+	srand(time(NULL));
+
+	while (sum <= 2645)
 	{
-        password[i] = rand() % 94 + 33;
+		c = rand() % 128;
+		sum += c;
+		putchar(c);
 	}
-    
-	password[8] = '\0';
-    
-	printf("%s\n", password);
+
+	putchar(2772 - sum);
 
 	return (0);
 }

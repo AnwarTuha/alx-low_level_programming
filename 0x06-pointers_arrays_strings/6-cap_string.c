@@ -13,25 +13,26 @@
 
 char *cap_string(char *str)
 {
-	bool new_word;
+	int length;
+	int cap_next;
 	int i;
+	char c;
 
-	new_word = true;
+	length = strlen(str);
+	cap_next = 1;
 
-	for (i = 0; str[i]; i++)
+	for (i = 0; i < length; i++)
 	{
-		if (new_word && isalpha(str[i]))
+		c = str[i];
+
+		if (cap_next && islower(c))
 		{
-			str[i] = toupper(str[i]);
-			new_word = false;
+			str[i] = toupper(c);
 		}
-		else if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-					str[i] == ',' || str[i] == ';' || str[i] == '.' ||
-					str[i] == '!' || str[i] == '?' || str[i] == '"' || str[i] == '(' ||
-					str[i] == ')' || str[i] == '{' || str[i] == '}')
-		{
-			new_word = true;
-		}
+
+		cap_next = isspace(c) || c == ',' || c == ';' || c == '.' || c == '!' ||
+					c == '?' || c == '\"' || c == '(' || c == ')' || c == '{' ||
+					c == '}';
 	}
 
 	return (str);

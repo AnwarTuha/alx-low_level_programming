@@ -13,24 +13,26 @@
 
 char *leet(char *s)
 {
-	char *letters;
-	char *numbers;
+	char *leet_str;
 	int i;
 	int j;
 
-	letters = "aAeEoOtTlL";
-	numbers = "4300711";
+	leet_str = s;
+	char leet_table[5] = {'4', '3', '0', '7', '1'};
+	char original_chars[5] = {'a', 'e', 'o', 't', 'l'};
+	char original_chars_upper[5] = {'A', 'E', 'O', 'T', 'L'};
 
-	for (i = 0; s[i]; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; letters[j]; j++)
+		for (j = 0; j < 5; j++)
 		{
-			if (s[i] == letters[j])
+			if (s[i] == original_chars[j] || s[i] == original_chars_upper[j])
 			{
-				s[i] = numbers[j / 2];
+				leet_str[i] = leet_table[j];
+				break;
 			}
 		}
 	}
 
-	return (s);
+	return (leet_str);
 }

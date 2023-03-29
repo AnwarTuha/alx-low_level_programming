@@ -14,13 +14,13 @@
 char *leet(char *s)
 {
 	char *leet_str;
+	char leet_table[5] = {'4', '3', '0', '7', '1'};
+	char original_chars[5] = {'a', 'e', 'o', 't', 'l'};
+	char original_chars_upper[5] = {'A', 'E', 'O', 'T', 'L'};
 	int i;
 	int j;
 
 	leet_str = s;
-	char leet_table[5] = {'4', '3', '0', '7', '1'};
-	char original_chars[5] = {'a', 'e', 'o', 't', 'l'};
-	char original_chars_upper[5] = {'A', 'E', 'O', 'T', 'L'};
 
 	for (i = 0; s[i] != '\0'; i++)
 	{

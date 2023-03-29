@@ -13,34 +13,21 @@
 
 void print_number(int n)
 {
-	int i = 1;
-	int temp = n;
-
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
+	unsigned int x;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		n *= -1;
 	}
 
-	while (temp)
+	x = n;
+
+	if (x / 10)
 	{
-		i *= 10;
-		temp /= 10;
+		print_number(x / 10);
 	}
 
-	i /= 10;
-
-	while (i >= 1)
-	{
-		_putchar((n / i) + '0');
-		n %= i;
-		i /= 10;
-	}
+	_putchar(x % 10 + '0');
 }
 

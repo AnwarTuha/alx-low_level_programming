@@ -13,14 +13,13 @@
 
 char *rot13(char *s)
 {
+	char *current_char;
+	char *result = malloc(strlen(s));
+
 	if (s == NULL)
 	{
 		return (NULL);
 	}
-
-	char *current_char;
-
-	char *result = malloc(strlen(s));
 
 	if (result != NULL)
 	{

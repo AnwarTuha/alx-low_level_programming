@@ -14,7 +14,7 @@
 char *rot13(char *s)
 {
 	char *current_char;
-	char *result = malloc(strlen(s));
+	char *result = malloc(strlen(s) + 1);
 
 	if (s == NULL)
 	{

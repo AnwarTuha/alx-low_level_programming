@@ -27,32 +27,12 @@ void print_buffer(char *b, int size)
 		for (j = 0; j < 10; j++)
 		{
 			if (i + j < size)
-			{
-				printf("%02x", b[i + j]);
-			}
+				printf("%02x%s", b[i + j], (j + 1) % 2 == 0 ? " " : "");
 			else
-			{
-				printf("  ");
-			}
-			if ((j + 1) % 2 == 0)
-			{
-				printf(" ");
-			}
+				printf("  %s", (j + 1) % 2 == 0 ? " " : "");
 		}
-		for (j = 0; j < 10; j++)
-		{
-			if (i + j < size)
-			{
-				if (b[i + j] >= ' ' && b[i + j] <= '~')
-				{
-					printf("%c", b[i + j]);
-				}
-				else
-				{
-					printf(".");
-				}
-			}
-		}
+		for (j = 0; j < 10 && i + j < size; j++)
+			printf("%c", b[i + j] >= ' ' && b[i + j] <= '~' ? b[i + j] : '.');
 		printf("\n");
 	}
 }

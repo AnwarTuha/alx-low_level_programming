@@ -13,36 +13,22 @@
 
 char *rot13(char *s)
 {
-	char *current_char;
-	char *result = malloc(strlen(s) + 1);
+    int i, j;
 
-	if (s == NULL)
-	{
-		return (NULL);
-	}
+    char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	if (result != NULL)
-	{
-		strcpy(result, s);
-		current_char = result;
-
-		while (*current_char != '\0')
-		{
-			if ((*current_char >= 97 && *current_char <= 122) ||
-				(*current_char >= 65 && *current_char <= 90))
+    for (i = 0; s[i] != '\0'; i++)
+    {
+        for (j = 0; a[j] != '\0'; j++)
+        {
+			if (s[i] == a[j])
 			{
-				if (*current_char > 109 || (*current_char > 77 && *current_char < 91))
-				{
-					*current_char -= 13;
-				}
-				else
-				{
-					*current_char += 13;
-				}
+				s[i] = b[j];
+				break;
 			}
-			current_char++;
 		}
 	}
 
-	return (result);
+	return (s);
 }

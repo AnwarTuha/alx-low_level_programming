@@ -16,20 +16,24 @@ void print_buffer(char *b, int size)
 {
 	int i, j;
 
-	for (i = 0; i < size; i++)
+	if (size <= 0)
+	{
+		printf("\n");
+		return;
+	}
+	for (i = 0; i < size; i += 10)
 	{
 		printf("%08x: ", i);
 		for (j = 0; j < 10; j++)
 		{
 			if (i + j < size)
 			{
-				printf("%20x", b[i + j]);
+				printf("%02x", b[i + j]);
 			}
 			else
 			{
 				printf("  ");
 			}
-
 			if ((j + 1) % 2 == 0)
 			{
 				printf(" ");
@@ -37,9 +41,9 @@ void print_buffer(char *b, int size)
 		}
 		for (j = 0; j < 10; j++)
 		{
-			if (j + 1 < size)
+			if (i + j < size)
 			{
-				if (isprint(b[i + j]))
+				if (b[i + j] >= ' ' && b[i + j] <= '~')
 				{
 					printf("%c", b[i + j]);
 				}
@@ -51,8 +55,5 @@ void print_buffer(char *b, int size)
 		}
 		printf("\n");
 	}
-	if (size <= 0)
-	{
-		printf("\n");
-	}
 }
+

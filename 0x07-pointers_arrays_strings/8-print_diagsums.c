@@ -18,10 +18,13 @@ void print_diagsums(int *a, int size)
 	int sum_diag_2;
 	int i;
 
+	sum_diag_1 = 0;
+	sum_diag_2 = 0;
+
 	for (i = 0; i < size; i++)
 	{
-		sum_diag_1 = sum_diag_1 + *(a + i * size + i);
-		sum_diag_2 = sum_diag_2 + *(a + (i + 1) * (size - 1));
+		sum_diag_1 += a[(size + 1) * i];
+		sum_diag_2 += a[(size - 1) * (i + 1)];
 	}
 
 	printf("%d, %d\n", sum_diag_1, sum_diag_2);

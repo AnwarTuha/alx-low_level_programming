@@ -10,7 +10,7 @@
 * @b: the data to be filled
 * @n: the first bytes of memory to be filled
 *
-* Return: converted string
+* Return: pointer to memory area of S
 */
 
 char *_memset(char *s, char b, unsigned int n)

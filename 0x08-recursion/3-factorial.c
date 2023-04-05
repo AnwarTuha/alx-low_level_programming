@@ -13,16 +13,16 @@
 
 int factorial(int n)
 {
-	unsigned int unsigned_number;
-
-	unsigned_number = n;
-
-	if (unsigned_number == 0)
+	if (n == 0)
 	{
 		return (1);
 	}
+	else if (n < 0)
+	{
+		return (-1);
+	}
 	else
 	{
-		return (unsigned_number * factorial(unsigned_number - 1));
+		return (n * factorial(n - 1));
 	}
 }

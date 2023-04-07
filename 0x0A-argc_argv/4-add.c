@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
 
@@ -53,6 +55,7 @@ bool isNumber(char number[])
 int main(int argc, char *argv[])
 {
 	int sum = 0;
+	int i;
 
 	if (argc == 1)
 	{
@@ -60,7 +63,7 @@ int main(int argc, char *argv[])
 		putchar('\n');
 		return (0);
 	}
-	for (int i = 1; i < argc; i++)
+	for (i = 1; i < argc; i++)
 	{
 		if (!isNumber(argv[i]))
 		{

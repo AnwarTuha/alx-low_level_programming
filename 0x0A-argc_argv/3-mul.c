@@ -10,7 +10,7 @@
 * Return: 0, denoting success
 */
 
-int main(int argc, char *argv[])
+int main(int argc __attribute__((unused)), char *argv[])
 {
 	char errorMessage[] = "Error\n";
 	int i;

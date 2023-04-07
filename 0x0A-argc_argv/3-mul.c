@@ -37,11 +37,9 @@ void print_number(int n)
 
 int main(int argc __attribute__((unused)), char *argv[])
 {
-	char errorMessage[] = "Error\n";
 	int num1;
 	int num2;
 	int result;
-	int i;
 
 	if (argc != 3)
 	{

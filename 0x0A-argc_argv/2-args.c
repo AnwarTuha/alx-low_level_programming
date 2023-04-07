@@ -13,13 +13,19 @@
 int main(int argc __attribute__((unused)), char *argv[])
 {
 	int i;
+	int j;
 
 	for (i = 0; i < argc; i++)
 	{
-		putchar(argv[i]);
-	}
+		j = 0;
 
-	putchar('\n');
+		while (argv[i][j] != '\0')
+		{
+			putchar(argv[i][j]);
+			j++;
+		}
+		putchar('\n');
+	}
 
 	return (0);
 }

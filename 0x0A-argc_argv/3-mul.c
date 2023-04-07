@@ -12,36 +12,25 @@
 
 int main(int argc, char *argv[])
 {
+	char errorMessage[] = "Error\n";
 	int i;
-	int j;
-	int product;
-	char errorMessage[] = "Error";
 
-	product = 1;
-
-	if (argc == 0)
+	if (argc != 3)
 	{
-		for (i = 0; i < 5; i++)
+		for (i = 0; i < 6; i++)
 		{
 			putchar(errorMessage[i]);
 		}
-		putchar('\n');
 
 		return (1);
 	}
 
-	for (i = 0; i < argc; i++)
-	{
-		j = 0;
+	int num1 = atoi(argv[1]);
+	int num2 = atoi(argv[2]);
 
-		while (argv[i][j] != '\0')
-		{
-			product = product * argv[i][j];
-			j++;
-		}
-	}
+	int result = num1 * num2;
 
-	putchar(48 + product);
+	putchar(48 + result);
 	putchar('\n');
 
 	return (0);

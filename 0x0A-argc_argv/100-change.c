@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
 		putchar('\n');
 
 		return (1);
-    }
+	}
 
 	cents = atoi(argv[1]);
 	coins = 0;

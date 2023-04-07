@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -13,6 +15,9 @@
 int main(int argc __attribute__((unused)), char *argv[])
 {
 	char errorMessage[] = "Error\n";
+	int num1;
+	int num2;
+	int result;
 	int i;
 
 	if (argc != 3)
@@ -25,10 +30,10 @@ int main(int argc __attribute__((unused)), char *argv[])
 		return (1);
 	}
 
-	int num1 = atoi(argv[1]);
-	int num2 = atoi(argv[2]);
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2]);
 
-	int result = num1 * num2;
+	result = num1 * num2;
 
 	putchar(48 + result);
 	putchar('\n');

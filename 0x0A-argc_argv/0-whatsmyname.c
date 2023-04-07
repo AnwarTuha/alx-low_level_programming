@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <main.h>
 
 /**
 * main - Entree point, prints out the name of the program

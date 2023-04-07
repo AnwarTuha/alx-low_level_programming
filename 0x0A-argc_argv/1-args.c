@@ -12,7 +12,7 @@
 
 int main(int argc, char *argv[] __attribute__((unused)))
 {
-	putchar(argc);
+	putchar(argc - 1);
 	putchar('\n');
 
 	return (0);

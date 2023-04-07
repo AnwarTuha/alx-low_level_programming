@@ -13,13 +13,11 @@ int main(int argc, char *argv[])
 {
 	int i;
 
-	i = 0;
-
-	while (argv[0][i] != '\0')
+	for (i = 0; i < argc && argv[0][i] != '\0'; i++)
 	{
 		putchar(argv[0][i]);
-		i++;
 	}
+
 	putchar('\n');
 
 	return (0);

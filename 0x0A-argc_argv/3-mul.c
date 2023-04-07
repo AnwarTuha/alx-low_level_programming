@@ -4,6 +4,29 @@
 #include "main.h"
 
 /**
+* print_number - prints given number
+*
+* @n: number to be printed
+*
+* Return: void
+*/
+
+void print_number(int n)
+{
+	if (n < 0)
+	{
+		putchar('-');
+		n = -n;
+	}
+	if (n / 10)
+	{
+		print_number(n / 10);
+	}
+	putchar(n % 10 + '0');
+}
+
+
+/**
 * main - Entree point, prints out all arguments of program
 *
 * @argc: argument count
@@ -22,10 +45,12 @@ int main(int argc __attribute__((unused)), char *argv[])
 
 	if (argc != 3)
 	{
-		for (i = 0; i < 6; i++)
-		{
-			putchar(errorMessage[i]);
-		}
+		putchar('E');
+		putchar('r');
+		putchar('r');
+		putchar('o');
+		putchar('r');
+		putchar('\n');
 
 		return (1);
 	}
@@ -35,7 +60,7 @@ int main(int argc __attribute__((unused)), char *argv[])
 
 	result = num1 * num2;
 
-	putchar(48 + result);
+	print_number(result);
 	putchar('\n');
 
 	return (0);

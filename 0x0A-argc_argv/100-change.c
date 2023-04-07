@@ -37,59 +37,36 @@ void print_number(int n)
 
 int main(int argc, char *argv[])
 {
-	int cents;
-	int coins;
+	int cents, coins = 0;
 
 	if (argc != 2)
 	{
-		putchar('E');
-		putchar('r');
-		putchar('r');
-		putchar('o');
-		putchar('r');
-		putchar('\n');
-
+		printf("%s\n", "Error");
 		return (1);
 	}
 
 	cents = atoi(argv[1]);
-	coins = 0;
 
 	if (cents < 0)
 	{
 		putchar('0');
 		putchar('\n');
-
 		return (0);
 	}
 
 	while (cents > 0)
 	{
 		if (cents >= 25)
-		{
 			cents -= 25;
-			coins++;
-		}
 		else if (cents >= 10)
-		{
 			cents -= 10;
-			coins++;
-		}
 		else if (cents >= 5)
-		{
 			cents -= 5;
-			coins++;
-		}
 		else if (cents >= 2)
-		{
 			cents -= 2;
-			coins++;
-		}
 		else
-		{
 			cents -= 1;
-			coins++;
-		}
+		coins++;
 	}
 
 	print_number(coins);

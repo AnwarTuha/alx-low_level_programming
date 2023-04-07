@@ -25,6 +25,8 @@ int main(int argc __attribute__((unused)), char *argv[])
 		{
 			putchar(errorMessage[i]);
 		}
+		putchar('\n');
+
 		return (1);
 	}
 

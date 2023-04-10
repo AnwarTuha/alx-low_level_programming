@@ -42,7 +42,7 @@ char **strtow(char *str)
 	int word_count = count_words(str);
 	char **arr;
 
-	if (str == NULL || str[0] == '\0')
+	if (str == NULL || str[0] == '\0' || (str[0] == ' ' && str[1] == '\0'))
 	{
 		return (NULL);
 	}

@@ -15,13 +15,28 @@
 int count_words(char *str)
 {
 	int i, count = 0;
+	int non_space = 0;
 
 	for (i = 0; str[i]; i++)
 	{
-		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
+		// if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
+		// {
+		// 	count++;
+		// }
+		if (str[i] != ' ')
 		{
-			count++;
+			non_space = 1;
+			
+			if (str[i + 1] == ' ' || str[i + 1] == '\0')
+			{
+				count++;
+			}
 		}
+	}
+
+	if (non_space == 0)
+	{
+		return (-1);
 	}
 
 	return (count);
@@ -42,7 +57,7 @@ char **strtow(char *str)
 	int word_count = count_words(str);
 	char **arr;
 
-	if (str == NULL || str[0] == '\0' || (str[0] == ' ' && str[1] == '\0'))
+	if (str == NULL || str[0] == '\0' || word_count == -1)
 	{
 		return (NULL);
 	}

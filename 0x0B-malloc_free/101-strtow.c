@@ -22,7 +22,7 @@ int count_words(char *str)
 		if (str[i] != ' ')
 		{
 			non_space = 1;
-			
+
 			if (str[i + 1] == ' ' || str[i + 1] == '\0')
 			{
 				count++;

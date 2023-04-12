@@ -1,56 +1,50 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "main.h"
 
 /**
-* print_number - prints given number
+* is_number - checks if given parameter is digit
 *
-* @n: number to be printed
+* @str: character to be checked
 *
-* Return: void
+* Return: 1 if true, 0 otherwise
 */
 
-void print_number(int n)
+int is_number(char *str)
 {
-	if (n < 0)
+	int i;
+
+	for (i = 0; str[i]; i++)
 	{
-		putchar('-');
-		n = -n;
+		if (!isdigit(str[i]))
+		{
+			return (0);
+		}
 	}
-	if (n / 10)
-	{
-		print_number(n / 10);
-	}
-	putchar(n % 10 + '0');
+
+	return (1);
 }
 
-
 /**
-* main - Entree point, multiplies given arguments
+* main - Entree point, prints out all arguments of program
 *
 * @argc: argument count
 * @argv: argument vector
 *
-* Return: 0, denoting success
+* Return: 0, denoting success OR
+*         98, denoting failure.
 */
 
-int main(int argc __attribute__((unused)), char *argv[])
+int main(int argc, char *argv[])
 {
-	int num1;
-	int num2;
-	int result;
+	int num1, num2, result;
 
-	if (argc != 3)
+	if (argc != 3 || !is_number(argv[1]) || !is_number(argv[2]))
 	{
-		putchar('E');
-		putchar('r');
-		putchar('r');
-		putchar('o');
-		putchar('r');
-		putchar('\n');
-
-		return (1);
+		printf("Error\n");
+		exit(98);
 	}
 
 	num1 = atoi(argv[1]);
@@ -58,8 +52,8 @@ int main(int argc __attribute__((unused)), char *argv[])
 
 	result = num1 * num2;
 
-	print_number(result);
-	putchar('\n');
+	printf("%d\n", result);
 
 	return (0);
 }
+

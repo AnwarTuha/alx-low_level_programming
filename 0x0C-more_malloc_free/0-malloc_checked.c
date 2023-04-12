@@ -13,14 +13,14 @@
 */
 void *malloc_checked(unsigned int b)
 {
-	b = malloc(sizeof(int));
+	void *address;
 
-	if (b == NULL)
+	address = malloc(b);
+
+	if (address == NULL)
 	{
-		printf("%d\n", 98);
+		exit(98);
 	}
-	else
-	{
-		printf("%p\n", b);
-	}
+
+	printf("%p\n", address);
 }

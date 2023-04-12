@@ -9,7 +9,7 @@
 *
 * @b: variable to which memory will be allocated to
 *
-* Return: void
+* Return: address of the memory created for b
 */
 void *malloc_checked(unsigned int b)
 {

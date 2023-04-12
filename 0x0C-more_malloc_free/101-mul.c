@@ -5,6 +5,28 @@
 #include "main.h"
 
 /**
+* print_number - prints given number
+*
+* @n: number to be printed
+*
+* Return: void
+*/
+
+void print_number(int n)
+{
+	if (n < 0)
+	{
+		putchar('-');
+		n = -n;
+	}
+	if (n / 10)
+	{
+		print_number(n / 10);
+	}
+	putchar(n % 10 + '0');
+}
+
+/**
 * is_number - checks if given parameter is digit
 *
 * @str: character to be checked
@@ -37,13 +59,19 @@ int is_number(char *str)
 *         98, denoting failure.
 */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int num1, num2, result;
+	int num1, num2;
+	long int result;
 
 	if (argc != 3 || !is_number(argv[1]) || !is_number(argv[2]))
 	{
-		printf("Error\n");
+		putchar('E');
+		putchar('r');
+		putchar('r');
+		putchar('o');
+		putchar('r');
+		putchar('\n');
 		exit(98);
 	}
 
@@ -52,7 +80,8 @@ int main(int argc, char *argv[])
 
 	result = num1 * num2;
 
-	printf("%d\n", result);
+	print_number(result);
+	putchar('\n');
 
 	return (0);
 }

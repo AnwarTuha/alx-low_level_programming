@@ -4,16 +4,33 @@
 #include "3-calc.h"
 
 /**
- *  get_op_func - create new dog from given parameters
+ *  get_op_func - checks given operator and returns relevant function
  *
- *	@name: name of new dog
- *	@age: age of new dog
- *	@owner: owner of new dog
+ *	@s: operator to be checked
  *
- *  Return: new dog struct of type dog_t
+ *  Return: operator function or NULL
  *
  */
 int (*get_op_func(char *s))(int, int)
 {
+	op_t ops[] = {
+		{ "+", op_add },
+		{ "-", op_sub },
+		{ "*", op_mul },
+		{ "/", op_div },
+		{ "%", op_mod },
+		{ NULL, NULL }
+	};
+	int i;
 
+	while (i < 5)
+	{
+		if (strcmp(s, ops[i].op) == 0)
+		{
+			return (ops[i].f);
+		}
+		i++;
+	}
+
+	return (0);
 }

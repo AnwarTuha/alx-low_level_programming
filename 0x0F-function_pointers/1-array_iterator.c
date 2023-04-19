@@ -6,16 +6,22 @@
 /**
  *  array_iterator - write a function that prints given name
  *
- *	@array: string to be printed
- *	@f: modifier function for the name
+ *	@array: array to be iterated
+ *	@size: size of given array
+ *	@action: function to be called for every element of @array
  *
  *  Return: void
  *
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
+	int i;
+
 	if (array && size && action)
 	{
-		action(size);
+		for (i = 0; i < size; i++)
+		{
+			action(array[i]);
+		}
 	}
 }

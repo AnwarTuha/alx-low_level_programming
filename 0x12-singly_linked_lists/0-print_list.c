@@ -38,7 +38,7 @@ size_t print_list(const list_t *h)
 			}
 			_putchar(']');
 			_putchar(' ');
-			for (int i = 0; h->str[i]; i++)
+			for (i = 0; h->str[i]; i++)
 			{
 				_putchar(h->str[i]);
 			}
@@ -48,4 +48,6 @@ size_t print_list(const list_t *h)
 
 		node_count++;
 	}
+
+	return (node_count++);
 }

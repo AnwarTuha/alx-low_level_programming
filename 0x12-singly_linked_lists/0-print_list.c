@@ -18,6 +18,9 @@ size_t print_list(const list_t *h)
 	char *null_string = "[0](nil)";
 	int i, len;
 
+	if (h == NULL)
+		return (0);
+
 	while (h != NULL)
 	{
 		if (h->str == NULL)

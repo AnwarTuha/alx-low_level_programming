@@ -30,7 +30,7 @@ size_t print_list(const list_t *h)
 		else
 		{
 			len = h->len;
-			
+
 			_putchar('[');
 			while (len > 0)
 			{

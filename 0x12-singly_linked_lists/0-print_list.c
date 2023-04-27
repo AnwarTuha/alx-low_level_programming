@@ -15,7 +15,6 @@
 size_t print_list(const list_t *h)
 {
 	size_t node_count = 0;
-	int i, len;
 
 	if (h == NULL)
 		return (0);

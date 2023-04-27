@@ -33,7 +33,7 @@ void _print_digits(int n)
 size_t print_list(const list_t *h)
 {
 	size_t node_count = 0;
-	char *null_string = "[0](nil)";
+	char *null_string = "[0] (nil)";
 	int i, len;
 
 	if (h == NULL)

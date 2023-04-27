@@ -7,7 +7,7 @@
 /**
  *  _print_digits - prints digits of given number
  *
- *	@n: linked list to be printed
+ *	@n: number to be printed
  *
  *  Return: void
  *
@@ -19,7 +19,7 @@ void _print_digits(int n)
 		_print_digits(n / 10);
 	}
 
-	putchar(n % 10 + '0');
+	_putchar(n % 10 + '0');
 }
 
 /**
@@ -39,29 +39,33 @@ size_t print_list(const list_t *h)
 	if (h == NULL)
 		return (0);
 
-	while (h != NULL)
+	while (h->next != NULL)
 	{
 		if (h->str == NULL)
 		{
 			for (i = 0; i < 8; i++)
 			{
-				putchar(null_string[i]);
+				_putchar(null_string[i]);
 			}
 		}
 		else
 		{
 			len = h->len;
 
-			putchar('[');
+			_putchar('[');
 			_print_digits(len);
-			putchar(']');
-			putchar(' ');
+			_putchar(']');
+			_putchar(' ');
 			for (i = 0; h->str[i]; i++)
 			{
-				putchar(h->str[i]);
+				_putchar(h->str[i]);
 			}
 		}
-		putchar('\n');
+		_putchar('\n');
+
+		if (h->next == NULL)
+			break;
+
 		h = h->next;
 
 		node_count++;

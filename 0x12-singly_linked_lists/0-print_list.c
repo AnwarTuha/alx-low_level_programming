@@ -24,26 +24,27 @@ size_t print_list(const list_t *h)
 		{
 			for (i = 0; i < 8; i++)
 			{
-				_putchar(null_string[i]);
+				putchar(null_string[i]);
 			}
 		}
 		else
 		{
 			len = h->len;
-
+			
+			putchar('[');
 			while (len > 0)
 			{
-				_putchar(len % 10 + '0');
+				putchar(len % 10 + '0');
 				len /= 10;
 			}
-			_putchar(']');
-			_putchar(' ');
+			putchar(']');
+			putchar(' ');
 			for (i = 0; h->str[i]; i++)
 			{
-				_putchar(h->str[i]);
+				putchar(h->str[i]);
 			}
 		}
-		_putchar('\n');
+		putchar('\n');
 		h = h->next;
 
 		node_count++;

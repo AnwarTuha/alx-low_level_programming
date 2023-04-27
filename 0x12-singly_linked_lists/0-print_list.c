@@ -39,7 +39,7 @@ size_t print_list(const list_t *h)
 	if (h == NULL)
 		return (0);
 
-	while (h->next != NULL)
+	while (h != NULL)
 	{
 		if (h->str == NULL)
 		{
@@ -62,13 +62,10 @@ size_t print_list(const list_t *h)
 			}
 		}
 		_putchar('\n');
-
+		node_count++;
 		if (h->next == NULL)
 			break;
-
 		h = h->next;
-
-		node_count++;
 	}
 
 	return (node_count++);

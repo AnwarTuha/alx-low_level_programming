@@ -5,6 +5,24 @@
 #include "lists.h"
 
 /**
+ *  _print_digits - prints digits of given number
+ *
+ *	@n: linked list to be printed
+ *
+ *  Return: void
+ *
+ */
+void _print_digits(int n)
+{
+	if (n > 9)
+	{
+		_print_digits(n / 10);
+	}
+
+	putchar(n % 10 + '0');
+}
+
+/**
  *  print_list - prints value of str for each list_t given
  *
  *	@h: linked list to be printed
@@ -27,27 +45,23 @@ size_t print_list(const list_t *h)
 		{
 			for (i = 0; i < 8; i++)
 			{
-				_putchar(null_string[i]);
+				putchar(null_string[i]);
 			}
 		}
 		else
 		{
 			len = h->len;
 
-			_putchar('[');
-			while (len > 0)
-			{
-				_putchar(len % 10 + '0');
-				len /= 10;
-			}
-			_putchar(']');
-			_putchar(' ');
+			putchar('[');
+			_print_digits(len);
+			putchar(']');
+			putchar(' ');
 			for (i = 0; h->str[i]; i++)
 			{
-				_putchar(h->str[i]);
+				putchar(h->str[i]);
 			}
 		}
-		_putchar('\n');
+		putchar('\n');
 		h = h->next;
 
 		node_count++;

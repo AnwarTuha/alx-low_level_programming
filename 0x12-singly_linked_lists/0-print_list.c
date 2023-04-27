@@ -5,24 +5,6 @@
 #include "lists.h"
 
 /**
- *  _print_digits - prints digits of given number
- *
- *	@n: number to be printed
- *
- *  Return: void
- *
- */
-void _print_digits(int n)
-{
-	if (n > 9)
-	{
-		_print_digits(n / 10);
-	}
-
-	_putchar(n % 10 + '0');
-}
-
-/**
  *  print_list - prints value of str for each list_t given
  *
  *	@h: linked list to be printed
@@ -33,7 +15,6 @@ void _print_digits(int n)
 size_t print_list(const list_t *h)
 {
 	size_t node_count = 0;
-	char *null_string = "[0] (nil)\n";
 	int i, len;
 
 	if (h == NULL)
@@ -43,25 +24,12 @@ size_t print_list(const list_t *h)
 	{
 		if (h->str == NULL)
 		{
-			for (i = 0; i < 8; i++)
-			{
-				_putchar(null_string[i]);
-			}
+			printf("[0] (nil)\n");
 		}
 		else
 		{
-			len = h->len;
-
-			_putchar('[');
-			_print_digits(len);
-			_putchar(']');
-			_putchar(' ');
-			for (i = 0; h->str[i]; i++)
-			{
-				_putchar(h->str[i]);
-			}
+			printf("[%d] %s\n", h->len, h->str);
 		}
-		_putchar('\n');
 		node_count++;
 		if (h->next == NULL)
 			break;

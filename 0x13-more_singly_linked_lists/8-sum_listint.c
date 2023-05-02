@@ -8,7 +8,6 @@
  *  sum_listint - gets the required node from a given linked list
  *
  *	@head: pointer to the current head of a linked list
- *	@index: index of the location of the node
  *
  *  Return: required node of listint_t
  *

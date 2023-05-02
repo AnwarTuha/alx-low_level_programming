@@ -5,16 +5,16 @@
 #include "lists.h"
 
 /**
- *  _reallocate - reallocates memory for an array of pointers
+ *  _r - reallocates memory for an array of pointers
  *
  *	@list: previous list to append
  *	@size: size of new list
- *	@new_node: node to be added
+ *	@n: node to be added
  *
  *  Return: new node
  *
  */
-const listint_t **_reallocate(const listint_t **list, size_t size, const listint_t *new_node)
+const listint_t **_r(const listint_t **list, size_t size, const listint_t *n)
 {
 	const listint_t **newlist;
 	size_t i;
@@ -32,7 +32,7 @@ const listint_t **_reallocate(const listint_t **list, size_t size, const listint
 		newlist[i] = list[i];
 	}
 
-	newlist[i] = new_node;
+	newlist[i] = n;
 
 	free(list);
 
@@ -67,7 +67,7 @@ size_t print_listint_safe(const listint_t *head)
 		}
 		count++;
 
-		current = _reallocate(current, count, head);
+		current = _r(current, count, head);
 
 		printf("[%p] %d\n", (void *)head, head->n);
 

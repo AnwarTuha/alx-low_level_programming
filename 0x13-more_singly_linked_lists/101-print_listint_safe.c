@@ -4,6 +4,8 @@
 #include <stdarg.h>
 #include "lists.h"
 
+#define MAX_NODES 1000
+
 /**
  *  print_listint_safe - prints listint_t linked list
  *
@@ -31,20 +33,23 @@ size_t print_listint_safe(const listint_t *head)
 		if (slow == fast)
 		{
 			slow = head;
-			while (slow != fast)
+			while (slow != fast && count < MAX_NODES)
 			{
 				printf("[%p] %d\n", (void *)slow, slow->n);
 				slow = slow->next;
 				fast = fast->next;
 				count++;
 			}
-			printf("-> [%p] %d\n", (void *)slow, slow->n);
-			count++;
+			if (count < MAX_NODES)
+			{
+				printf("-> [%p] %d\n", (void *)slow, slow->n);
+				count++;
+			}
 			return (count);
 		}
 	}
 
-	while (head)
+	while (head && count < MAX_NODES)
 	{
 		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;

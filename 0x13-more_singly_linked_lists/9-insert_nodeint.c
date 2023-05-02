@@ -5,7 +5,8 @@
 #include "lists.h"
 
 /**
- *  insert_nodeint_at_index - adds a node to the end of the given linked list
+ *  insert_nodeint_at_index - adds a node to a
+ *							given index of the given linked list
  *
  *	@head: pointer to the current head of a linked list
  *  @idx: the index at which the new node is entered

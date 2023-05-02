@@ -4,56 +4,77 @@
 #include <stdarg.h>
 #include "lists.h"
 
-#define MAX_NODES 1000
+/**
+ *  _reallocate - reallocates memory for an array of pointers
+ *
+ *	@list: previous list to append
+ *	@size: size of new list
+ *	@new_node: node to be added
+ *
+ *  Return: new node
+ *
+ */
+const listint_t **_reallocate(const listint_t **list, size_t size, const listint_t *new_node)
+{
+	const listint_t **newlist;
+	size_t i;
+
+	newlist = malloc(size * sizeof(listint_t *));
+
+	if (newlist == NULL)
+	{
+		free(list);
+		exit(98);
+	}
+
+	for (i = 0; i < size - 1; i++)
+	{
+		newlist[i] = list[i];
+	}
+
+	newlist[i] = new_node;
+
+	free(list);
+
+	return (newlist);
+}
 
 /**
- *  print_listint_safe - prints listint_t linked list
+ * print_listint_safe - prints a listint_t linked list.
  *
- *	@head: pointer to the current head of a linked list
+ * @head: pointer to the start of the list
  *
- *  Return: number of nodes printed
+ * Return: the number of nodes in the list
  *
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t count = 0;
-	const listint_t *slow, *fast;
+	size_t i, count = 0;
+	const listint_t **current = NULL;
 
-	if (head == NULL)
-		exit(98);
-
-	slow = head;
-	fast = head;
-
-	while (slow && fast && fast->next)
+	while (head != NULL)
 	{
-		slow = slow->next;
-		fast = fast->next->next;
-		if (slow == fast)
+		for (i = 0; i < count; i++)
 		{
-			slow = head;
-			while (slow != fast && count < MAX_NODES)
+			if (head == current[i])
 			{
-				printf("[%p] %d\n", (void *)slow, slow->n);
-				slow = slow->next;
-				fast = fast->next;
-				count++;
+				printf("-> [%p] %d\n", (void *)head, head->n);
+
+				free(current);
+
+				return (count);
 			}
-			if (count < MAX_NODES)
-			{
-				printf("-> [%p] %d\n", (void *)slow, slow->n);
-				count++;
-			}
-			return (count);
 		}
+		count++;
+
+		current = _reallocate(current, count, head);
+
+		printf("[%p] %d\n", (void *)head, head->n);
+
+		head = head->next;
 	}
 
-	while (head && count < MAX_NODES)
-	{
-		printf("[%p] %d\n", (void *)head, head->n);
-		head = head->next;
-		count++;
-	}
+	free(current);
 
 	return (count);
 }

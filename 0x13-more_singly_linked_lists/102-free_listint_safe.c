@@ -14,44 +14,24 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	size_t count = 0;
-	listint_t *temp, *slow, *fast;
+	size_t size = 0;
+	listint_t *current, *next;
 
 	if (h == NULL || *h == NULL)
 		return (0);
 
-	slow = *h;
-	fast = *h;
-
-	while (slow && fast && fast->next)
-	{
-		slow = slow->next;
-		fast = fast->next->next;
-
-		if (slow == fast)
-		{
-			temp = slow;
-			slow = slow->next;
-			fast = fast->next;
-
-			free(temp);
-			count++;
-		}
-		free(slow);
-		count++;
-		*h = NULL;
-		return (count);
-	}
-
-	while (*h)
-	{
-		temp = (*h)->next;
-		free(*h);
-		*h = temp;
-		count++;
-	}
-
+	current = *h;
 	*h = NULL;
 
-	return (count);
+	while (current != NULL)
+	{
+		size++;
+		next = current->next;
+		free(current);
+		if (next >= current)
+			break;
+		current = next;
+	}
+
+	return (size);
 }

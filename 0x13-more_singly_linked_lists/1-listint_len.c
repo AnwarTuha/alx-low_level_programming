@@ -5,14 +5,14 @@
 #include "lists.h"
 
 /**
- *  print_listint - prints elements of a given linked list
+ *  listint_len - prints the node count of a given linked list
  *
- *	@h: linked list where elements to be printed are found
+ *	@h: linked list to be counted
  *
  *  Return: size of nodes
  *
  */
-size_t print_listint(const listint_t *h)
+size_t listint_len(const listint_t *h)
 {
 	size_t node_count = 0;
 
@@ -21,7 +21,6 @@ size_t print_listint(const listint_t *h)
 
 	while (h != NULL)
 	{
-		printf("%d\n", h->n);
 		node_count++;
 		if (h->next == NULL)
 			break;

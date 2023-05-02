@@ -29,7 +29,6 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		slow = slow->next;
 		fast = fast->next->next;
-
 		if (slow == fast)
 		{
 			slow = head;

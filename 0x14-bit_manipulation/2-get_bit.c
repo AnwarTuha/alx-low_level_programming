@@ -5,7 +5,7 @@
 #include "main.h"
 
 /**
- *  binary_to_uint - returns the value of a bit at a given index
+ *  get_bit - returns the value of a bit at a given index
  *
  *	@n: number to be looked up in
  *  @index: the index at which we return the bit
